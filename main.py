@@ -144,6 +144,8 @@ def update_feeds(n_interval,n_clicks):
         prev_nclicks = n_clicks
     else:
         key = get_key(n_clicks,prev_nclicks)
+
+    rss_p.index_state = key
     
     prev_nclicks = n_clicks
     feeds,categories = rss_p.parserss(urls,key)

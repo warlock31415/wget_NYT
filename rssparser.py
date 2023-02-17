@@ -11,6 +11,8 @@ class RSSParser:
 
         self.categories = ['ALL']
 
+        self.index_state = self.categories[0]
+
     
         
     def parserss(self,urllist,key='*'):
@@ -41,7 +43,7 @@ class RSSParser:
             if title not in seen:
                 seen.append(title)
                 res.append(x)
-                
+
         # Store all feeds
         self.feeds = res
         res = self.update_topic_feed(key)
@@ -86,7 +88,8 @@ class RSSParser:
         # Get the dictionary containing the ID of the clicked link
         id_dict = id_list[index]
         # Get the URL and title from the dictionary
-        url = self.feeds[id_dict['index']]['URL']
+        clicked_feed = self.update_topic_feed(self.index_state)
+        url = clicked_feed[id_dict['index']]['URL']
 
         # Download the URL using wget
         process = Popen(['wget','-P',root_dir,url],stdout=PIPE,stderr=PIPE)

@@ -1,5 +1,5 @@
 # wget_NYT
-Essentially a python RSS bot that reads the URL to the NYT rss feed and downloads the html file locally. Thus bypassing the need for a subscription
+Essentially a python RSS bot that reads the URL to the NYT rss feed and downloads the html file locally. Thus bypassing the need for a subscription as of 2023
 
 ## Dependencies
 - Python dash
